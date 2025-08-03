@@ -1,30 +1,29 @@
-# Receptro.AI - Modular Media & Data Processing Pipeline
+ Receptro.AI - Modular Media & Data Processing Pipeline
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![OpenAI Whisper](https://img.shields.io/badge/AI-OpenAI%20Whisper-green.svg)](https://github.com/openai/whisper)
-[![Flask](https://img.shields.io/badge/Web-Flask-red.svg)](https://flask.palletsprojects.com/)
+Python 3.9+ - (https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+OpenAI Whisper - (https://img.shields.io/badge/AI-OpenAI%20Whisper-green.svg)](https://github.com/openai/whisper)
+Flask - (https://img.shields.io/badge/Web-Flask-red.svg)](https://flask.palletsprojects.com/)
 
-> **Assessment Project**: Complete end-to-end solution that seamlessly processes speech, text, and document images using state-of-the-art AI models with multiple interactive interfaces.
+> Complete end-to-end solution that seamlessly processes speech, text, and document images using state-of-the-art AI models with multiple interactive interfaces.
 
-##  Overview
+  Overview
 
 Receptro.AI is a comprehensive, modular pipeline that demonstrates advanced AI integration across multiple domains:
 
-- ** Speech-to-Text**: High-accuracy transcription using OpenAI Whisper
-- ** Intent Recognition**: Natural language understanding with parameter extraction
-- ** Text-to-Speech**: Natural audio response generation
-- ** Document OCR**: Intelligent field extraction from photographed documents
-- ** Unified Orchestration**: Single interface with intelligent file-type routing
+-  Speech-to-Text: High-accuracy transcription using OpenAI Whisper
+-  Intent Recognition: Natural language understanding with parameter extraction
+-  Text-to-Speech: Natural audio response generation
+-  Document OCR: Intelligent field extraction from photographed documents
+-  Unified Orchestration: Single interface with intelligent file-type routing
 
-##  Key Features
+  Key Features
 
-### Core Pipeline
-- **Modular Architecture**: Each component independently swappable
-- **Auto-Routing**: Detects file type and routes to appropriate pipeline
-- **Local Processing**: No API dependencies for core functionality
-- **High Accuracy**: State-of-the-art AI models (Whisper, Tesseract)
-- **Multiple Formats**: Supports various audio and image file types
+ Core Pipeline
+- Modular Architecture: Each component independently swappable
+- Auto-Routing: Detects file type and routes to appropriate pipeline
+- Local Processing: No API dependencies for core functionality
+- High Accuracy: State-of-the-art AI models (Whisper, Tesseract)
+- Multiple Formats: Supports various audio and image file types
 
 Bonus Features 
 
@@ -34,11 +33,11 @@ Bonus Features
  Comprehensive Reporting: Detailed analysis and metrics
  Engine Swapping: Easy replacement of any processing component
  
-##  Quick Start
+  Quick Start
 
-### Prerequisites
+ Prerequisites
 
-**System Dependencies:**
+System Dependencies:
 ```bash
 # macOS
 brew install tesseract ffmpeg
@@ -51,12 +50,12 @@ sudo apt update && sudo apt install tesseract-ocr tesseract-ocr-eng ffmpeg
 # Download FFmpeg from: https://ffmpeg.org/download.html
 ```
 
-**Python Dependencies:**
+Python Dependencies:
 ```bash
 pip install -r requirements-simple.txt
 ```
 
-### Basic Usage
+ Basic Usage
 
 ```bash
 # Process audio file (complete speech pipeline)
@@ -70,32 +69,32 @@ python main.py your-file.mp3
 python main.py your-image.jpg
 ```
 
-##  Demo Options
+  Demo Options
 
-### 1. Automated End-to-End Demo 
+ 1. Automated End-to-End Demo 
 ```bash
 python run_full_demo.py
 ```
-**The main showcase feature!** Automatically:
+The main showcase feature!** Automatically:
 - Discovers available input files
 - Processes through complete pipeline
 - Demonstrates all 5 core capabilities
 - Generates comprehensive reports
 - Shows engine swapping options
 
-### 2. Interactive Web Interface 
+2. Interactive Web Interface 
 ```bash
 python web_server.py
 # Open http://localhost:5000
 ```
-**Professional web interface featuring:**
+Professional web interface featuring:
 - Real-time file upload and processing
 - Live progress tracking with status updates
 - Drag-and-drop functionality
 - Download generated results
 - Beautiful, responsive design
 
-### 3. Individual Module Testing 
+ 3. Individual Module Testing 
 ```bash
 # Test each component independently
 python transcribe/transcribe.py sample.wav
@@ -104,7 +103,7 @@ python synthesize/synthesize.py --text "Hello world"
 python extract/extract.py document.png
 ```
 
-### 4. Docker Deployment 
+4. Docker Deployment 
 ```bash
 # Complete containerized deployment
 docker-compose up
@@ -114,7 +113,7 @@ docker build -t receptro-ai .
 docker run -v $(pwd)/inputs:/app/inputs -v $(pwd)/outputs:/app/outputs receptro-ai
 ```
 
-##  Project Structure
+ Project Structure
 
 ```
 receptro-ai/
@@ -144,9 +143,9 @@ receptro-ai/
 └──  web_ui.html               # Static web demo
 ```
 
-##  Pipeline Flow
+Pipeline Flow
 
-### Audio Processing Pipeline
+Audio Processing Pipeline
 ```
  Input: sample.wav
     ↓
@@ -163,7 +162,7 @@ receptro-ai/
  outputs/reply.mp3
 ```
 
-### Document Processing Pipeline
+ Document Processing Pipeline
 ```
  Input: document.png
     ↓
@@ -174,9 +173,9 @@ receptro-ai/
  outputs/fields.json
 ```
 
-##  Sample Outputs
+  Sample Outputs
 
-### Audio Pipeline Results
+ Audio Pipeline Results
 ```json
 {
   "input_file": "sample.wav",
@@ -196,7 +195,7 @@ receptro-ai/
 }
 ```
 
-### Document Pipeline Results
+ Document Pipeline Results
 ```json
 {
   "input_file": "license.png",
@@ -214,11 +213,11 @@ receptro-ai/
 }
 ```
 
-## Engine Swapping
+ Engine Swapping
 
 The modular design allows easy replacement of any processing component:
 
-### Speech-to-Text Alternatives
+ Speech-to-Text Alternatives
 ```python
 # Current: OpenAI Whisper (local)
 # Alternatives: Google Speech API, Azure Speech, AWS Transcribe
@@ -233,7 +232,7 @@ class AudioTranscriber:
         # ... easy swapping
 ```
 
-### Intent Recognition Alternatives
+ Intent Recognition Alternatives
 ```python
 # Current: Rule-based patterns
 # Alternatives: spaCy NER, Hugging Face Transformers, OpenAI GPT
@@ -247,8 +246,7 @@ class IntentParser:
             self.classifier = pipeline("text-classification")
         # ... easy swapping
 ```
-
-### Text-to-Speech Alternatives
+Text-to-Speech Alternatives
 ```python
 # Current: Google TTS (gTTS)
 # Alternatives: pyttsx3 (offline), Coqui TTS, Azure Cognitive Services
@@ -262,8 +260,7 @@ class TextToSpeech:
             self.tts = AzureTTSClient()
         # ... easy swapping
 ```
-
-### OCR Alternatives
+ OCR Alternatives
 ```python
 # Current: Tesseract (local)
 # Alternatives: Google Vision API, Azure Computer Vision, AWS Textract
@@ -278,9 +275,9 @@ class DocumentExtractor:
         # ... easy swapping
 ```
 
-## 🛠️ Development
+ Development
 
-### Running Tests
+Running Tests
 ```bash
 # Test individual modules
 python test_pipeline.py
@@ -292,40 +289,39 @@ python run_full_demo.py
 python web_server.py
 ```
 
-### Adding New Engines
-1. **Create new engine class** in the appropriate module
-2. **Update the factory method** to include new option
-3. **Add configuration** in the module's `__init__` method
-4. **Update documentation** with usage examples
+ Adding New Engines
+1. Create new engine class** in the appropriate module
+2. Update the factory method** to include new option
+3. Add configuration in the module's `__init__` method
+4. Update documentation with usage examples
 
-### Performance Optimization
-- **Lazy Loading**: Models load only when needed
-- **Caching**: Processed results cached for repeated use
-- **Asynchronous Processing**: Web interface uses background processing
-- **Memory Management**: Efficient handling of large audio/image files
+ Performance Optimization
+- Lazy Loading: Models load only when needed
+- Caching: Processed results cached for repeated use
+- Asynchronous Processing: Web interface uses background processing
+- Memory Management: Efficient handling of large audio/image files
 
-## 📋 Assessment Requirements
+Assessment Requirements
 
 | Requirement | Implementation | Status |
 |-------------|----------------|---------|
-| **Turn speech into text** | OpenAI Whisper integration |  |
-| **Infer intent and parameters** | Rule-based NLU with regex patterns | |
-| **Convert text back into audio** | Google TTS (gTTS) synthesis |  |
-| **Extract fields from documents** | Tesseract OCR with smart parsing |  |
-| **Single, easy-to-use interface** | CLI with auto file-type routing |  |
-| **Clean, well-organized code** | Modular structure with clear separation |  |
-| **Swappable engine design** | Factory pattern with documented alternatives |  |
-| ** Automated end-to-end runner** | Multiple demo scripts and interfaces |  |
+| Turn speech into text** | OpenAI Whisper integration |  |
+| Infer intent and parameters | Rule-based NLU with regex patterns | |
+| Convert text back into audio | Google TTS (gTTS) synthesis |  |
+| Extract fields from documents | Tesseract OCR with smart parsing |  |
+| Single, easy-to-use interface | CLI with auto file-type routing |  |
+| Clean, well-organized code | Modular structure with clear separation |  |
+| Swappable engine design | Factory pattern with documented alternatives |  |
+|  Automated end-to-end runner| Multiple demo scripts and interfaces |  |
 
-## 🎬 Demo Instructions
+ Demo Instructions
 
-### For Quick Evaluation (2 minutes)
+For Quick Evaluation (2 minutes)
 ```bash
 # Complete automated demonstration
 python run_full_demo.py
 ```
-
-### For Interactive Testing (5 minutes)
+ For Interactive Testing (5 minutes)
 ```bash
 # Start web interface
 python web_server.py
@@ -333,16 +329,16 @@ python web_server.py
 # Upload audio/image files for real-time processing
 ```
 
-### For Individual Component Testing
+ For Individual Component Testing
 ```bash
 # Process specific files
 python main.py your-audio-file.wav
 python main.py your-document-image.png
 ```
 
-##  Configuration
+ Configuration
 
-### Environment Variables
+Environment Variables
 ```bash
 # Optional: Set custom model paths
 export WHISPER_MODEL_SIZE=base  # tiny, base, small, medium, large
@@ -350,7 +346,7 @@ export TTS_ENGINE=gtts          # gtts, pyttsx3
 export OCR_ENGINE=tesseract     # tesseract, google_vision
 ```
 
-### Custom Configuration
+Custom Configuration
 ```python
 # config.py (optional)
 PROCESSING_CONFIG = {
@@ -361,17 +357,16 @@ PROCESSING_CONFIG = {
 }
 ```
 
-##  Troubleshooting
+Troubleshooting
 
-### Common Issues
-
-**Whisper model download fails:**
+Common Issues
+Whisper model download fails:
 ```bash
 # Pre-download the model
 python -c "import whisper; whisper.load_model('base')"
 ```
 
-**Tesseract not found:**
+Tesseract not found:
 ```bash
 # Verify installation
 tesseract --version
@@ -383,7 +378,7 @@ sudo apt install tesseract-ocr tesseract-ocr-eng
 brew install tesseract
 ```
 
-**Audio synthesis fails:**
+Audio synthesis fails:
 ```bash
 # Install alternative TTS
 pip install pyttsx3
@@ -392,7 +387,7 @@ pip install pyttsx3
 python synthesize/synthesize.py --text "Hello world" --engine pyttsx3
 ```
 
-**Web interface not loading:**
+Web interface not loading:
 ```bash
 # Check Flask installation
 pip install Flask Werkzeug
@@ -403,7 +398,7 @@ lsof -i :5000
 
 
 
-### Development Setup
+Development Setup
 ```bash
 # Clone the repository
 git clone https://github.com/your-username/receptro-ai.git
@@ -421,17 +416,10 @@ python run_full_demo.py
 
 
 
-## Acknowledgments
-
-- **OpenAI Whisper** - State-of-the-art speech recognition
-- **Tesseract OCR** - Reliable text extraction
-- **Google Text-to-Speech** - High-quality voice synthesis
-- **Flask** - Lightweight web framework
-- **Docker** - Containerization platform
 
 
 
 ---
 
-** Assessment Note**: This project demonstrates all required functionality plus bonus automation features. The `run_full_demo.py` script provides a complete automated demonstration of all five pipeline steps in one seamless execution.
+Note" This project demonstrates all required functionality plus bonus automation features. The `run_full_demo.py` script provides a complete automated demonstration of all five pipeline steps in one seamless execution.
 
