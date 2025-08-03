@@ -1,0 +1,33 @@
+# Core AI/ML dependencies
+openai-whisper>=20231117
+pytesseract>=0.3.10
+Pillow>=10.0.0
+TTS>=0.20.0
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# Audio processing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Image processing
+opencv-python>=4.8.0
+
+# Text processing and NLP
+regex>=2023.0.0
+transformers>=4.30.0
+
+# Utility libraries
+pathlib2>=2.3.7
+click>=8.1.0
+
+# Optional for better performance
+accelerate>=0.20.0
+sentencepiece>=0.1.99
+
+# Development and testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# System integration
+psutil>=5.9.0

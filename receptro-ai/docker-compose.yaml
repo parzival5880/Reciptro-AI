@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  receptro-ai:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: receptro-ai-pipeline
+    volumes:
+      - ./inputs:/app/inputs
+      - ./outputs:/app/outputs
+      - ./demo_outputs:/app/demo_outputs
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python3 run_full_demo.py
+    networks:
+      - receptro-network
+
+  receptro-web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: receptro-ai-web
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./outputs:/app/outputs
+      - ./demo_outputs:/app/demo_outputs
+    depends_on:
+      - receptro-ai
+    networks:
+      - receptro-network
+
+networks:
+  receptro-network:
+    driver: bridge
+
+volumes:
+  outputs:
+  demo_outputs:

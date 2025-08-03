@@ -1,0 +1,8 @@
+{
+  "intent": "general_question",
+  "parameters": {
+    "topic": "i can do"
+  },
+  "confidence": 0.14,
+  "original_text": "I am very busy, but I will check my calendar and see what I can do."
+}

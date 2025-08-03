@@ -1,0 +1,34 @@
+{
+  "whisper_config": {
+    "model_size": "base",
+    "alternative_engines": [
+      "google_speech",
+      "azure_speech",
+      "aws_transcribe"
+    ]
+  },
+  "intent_config": {
+    "current_engine": "rule_based",
+    "alternative_engines": [
+      "spacy_ner",
+      "huggingface_transformers",
+      "openai_gpt"
+    ]
+  },
+  "tts_config": {
+    "current_engine": "gtts",
+    "alternative_engines": [
+      "pyttsx3",
+      "coqui_tts",
+      "azure_cognitive"
+    ]
+  },
+  "ocr_config": {
+    "current_engine": "tesseract",
+    "alternative_engines": [
+      "google_vision",
+      "azure_computer_vision",
+      "aws_textract"
+    ]
+  }
+}

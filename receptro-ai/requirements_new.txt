@@ -1,0 +1,29 @@
+# Simplified requirements.txt - avoids TTS conflicts
+# Uses alternative TTS solutions
+
+# Core dependencies
+openai-whisper
+pytesseract>=0.3.10
+Pillow>=10.0.0
+torch>=1.13.0
+torchaudio>=0.13.0
+
+# Audio processing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Alternative TTS solutions (choose one)
+gTTS>=2.3.0           # Google Text-to-Speech (requires internet)
+pyttsx3>=2.90         # Offline TTS (system voices)
+
+# Text processing
+regex>=2023.0.0
+
+# Utility libraries
+click>=8.1.0
+
+# Development
+pytest>=7.4.0
+
+Flask>=2.3.0
+Werkzeug>=2.3.0
