@@ -95,9 +95,9 @@ def main():
     result = transcriber.transcribe_audio(args.audio_file, args.output)
     
     if result:
-        print("✅ Transcription completed successfully")
+        print("Transcription completed successfully")
     else:
-        print("❌ Transcription failed")
+        print("Transcription failed")
         sys.exit(1)
 
 
